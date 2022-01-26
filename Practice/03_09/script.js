@@ -23,4 +23,19 @@ const backpack = {
     this.strapLength.left = lengthLeft;
     this.strapLength.right = lengthRight;
   },
+  createPockets: function (numOfPockets) {
+    this.pocketNum = numOfPockets
+  },
+  shrinkBackpack: function (newVolume) {
+    this.volume = newVolume;
+  }
 };
+
+console.log("Pockets:", backpack.pocketNum)
+console.log("Volume:", backpack.volume)
+
+backpack.createPockets(2)
+backpack.shrinkBackpack(10)
+
+console.log("Volume:", backpack.volume)
+console.log("Pockets:", backpack.pocketNum)

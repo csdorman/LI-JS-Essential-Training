@@ -6,3 +6,34 @@
  * - Create several objects using the class.
  * - Test the objecs by calling their properties and using their methods in the console.
  */
+
+import Horn from "./Horn.js"
+import Backpack from "./Backpack.js"
+
+const paxman25 = new Horn(
+  "Paxman 25M",
+  "double",
+  "yellow brass",
+  "false"
+)
+
+const paxman75 = new Horn(
+  "Paxman 75M",
+  "triple",
+  "gold brass",
+  true
+)
+
+const everydayPack = new Backpack(
+  "Everyday Backpack",
+  30,
+  "grey",
+  15,
+  26,
+  26,
+  false,
+);
+
+console.log(paxman25)
+console.log(paxman75)
+console.log(everydayPack)

@@ -14,12 +14,8 @@ class Horn {
     this.good = good
   }
   toggleInCase() {
-    if (this.inCase == true) {
-      this.inCase = false
-    } else {
-      this.inCase = true
+    this.inCase = !this.inCase
     }
-  }
 }
 
 export default Horn

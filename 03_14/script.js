@@ -30,9 +30,15 @@ const artOfFrenchHorn = new Book(
   100,
   "French Horn",
   true,
-  "December 17, 1995 03:24:00",
-  "January 31 2022 11:58:08"
+)
+
+const deepWork = new Book(
+  "Deep Work",
+  "Cal Newport",
+  250,
+  "Productivity",
+  true
 )
 
 console.log(artOfFrenchHorn)
-console.log(artOfFrenchHorn.timeToRead)
+console.log(deepWork)

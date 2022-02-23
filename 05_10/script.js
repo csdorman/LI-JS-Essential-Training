@@ -52,11 +52,22 @@ const content = `
   
 `;
 
+const navMenu = `
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Support</a></li>
+`
+
 const main = document.querySelector(".maincontent");
 
 const newArticle = document.createElement("article");
+const navHtml = document.createElement("nav")
+navHtml.innerHTML = navMenu
 newArticle.classList.add("backpack");
 newArticle.setAttribute("id", "everyday");
 newArticle.innerHTML = content;
 
+main.insertAdjacentElement(#siteheader,navMenu)
 main.append(newArticle);

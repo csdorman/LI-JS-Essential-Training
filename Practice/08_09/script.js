@@ -11,6 +11,12 @@
  *  - Adds <img> markup pointing to frogpack.image
  *  - Adds <figcaption> element with image description
  *  - Returns <figure> element to where function is called
+ *
+ *
+ *  THEN
+ *  Use querySelector and append method to append article to <main>
+ *
+ *    HINT: Pass object to main func, pass to figure func, return to main function
  */
 
 const frogpack = {
@@ -24,6 +30,7 @@ const frogpack = {
   },
   lidOpen: false,
   image: "../../assets/images/frog.svg",
+  description: "A green kids backpack designed to make the lid look like the face of a frog sticking out its tongue.",
   toggleLid: function (lidStatus) {
     this.lidOpen = lidStatus;
   },
@@ -57,3 +64,27 @@ const content = `
       }</span></li>
     </ul>  
 `;
+
+// Create article
+
+const createArticle = (packObj) => {
+  let newArticle = document.createElement("article")
+  newArticle.innerHTML = content
+  newArticle.prepend(createImage(packObj))
+  //console.log("Inside func", newArticle)
+  return newArticle
+}
+
+const createImage = (objData) => {
+  let newFig = document.createElement("figure")
+  let newImg = document.createElement("img")
+  let newCaption = document.createElement("figcaption")
+  newImg.setAttribute("src", objData.image)
+  newImg.setAttribute("alt", objData.description)
+  console.log(newImg)
+  //console.log("caption", newCaption)
+  return newImg
+}
+
+const main = document.querySelector("main")
+main.append(createArticle(frogpack))

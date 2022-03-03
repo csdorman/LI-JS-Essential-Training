@@ -11,6 +11,12 @@
  *  - Adds <img> markup pointing to frogpack.image
  *  - Adds <figcaption> element with image description
  *  - Returns <figure> element to where function is called
+ *
+ *  THEN
+ *  Use querySelector and append method to append article to <main>
+ *
+ *    HINT: Pass object to main func, pass to figure func, return to main function
+ *
  */
 
 const frogpack = {

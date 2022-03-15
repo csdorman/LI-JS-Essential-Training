@@ -9,16 +9,34 @@
 const gridCell = document.querySelectorAll(".cell")
 const grid = document.querySelector(".grid")
 
-
+// This can be straightforward since it's the window
 window.addEventListener("click", (e) => {
   console.log("Click event registered", e)
 })
 
-grid.addEventListener("mouseenter", (e) => {
-  grid.setAttribute("class", "grid-mouseOver")
+// Same thing here
+grid.addEventListener("mouseenter", () => {
+  grid.style.border = "red solid 5px"
 })
 
-grid.addEventListener("mouseleave", (e) => {
-  grid.setAttribute("class", "grid")
+grid.addEventListener("mouseleave", () => {
+  grid.style.border ="none"
+})
+
+console.log(gridCell)
+
+// Since this variable is an array, there's another step.
+gridCell.forEach((e) => {
+  e.addEventListener("click", (e) => {
+    console.log("You clicked a cell!", e)
+    if (e.target.style.backgroundColor !== "yellow") {
+      e.target.style.backgroundColor = "yellow"
+    } else {
+      e.target.style.backgroundColor = "hsl(0, 0%, 90%)"
+    }
+  })
+  e.addEventListener("mouseenter", () => {
+    if
+  })
 })
 

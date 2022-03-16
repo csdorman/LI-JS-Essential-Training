@@ -8,10 +8,20 @@
 
 const gridCell = document.querySelectorAll(".cell")
 const grid = document.querySelector(".grid")
+const docBody = document.querySelector("body")
 
 // This can be straightforward since it's the window
 window.addEventListener("click", (e) => {
   console.log("Click event registered", e)
+})
+
+document.addEventListener("keydown", (e) => {
+  console.log(e.code)
+  if (e.code === "Space" && docBody.style.backgroundColor === "azure") {
+    docBody.style.backgroundColor = "black"
+  } else {
+    docBody.style.backgroundColor = "azure"
+  }
 })
 
 // Same thing here
@@ -35,8 +45,11 @@ gridCell.forEach((e) => {
       e.target.style.backgroundColor = "hsl(0, 0%, 90%)"
     }
   })
-  e.addEventListener("mouseenter", () => {
-    if
+  e.addEventListener("mouseenter", (e) => {
+    e.target.style.backgroundColor = "purple"
+    })
+  e.addEventListener("mouseleave", (e) => {
+    e.target.style.backgroundColor = "hsl(0, 0%, 90%)"
   })
 })
 

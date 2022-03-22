@@ -40,6 +40,14 @@ const lidToggle = function (event, button, newArg) {
     : (status.innerText = "closed");
 };
 
+// Add strap length functionality
+const newStrapLength = (strapArray) => {
+  console.log(strapArray)
+  strapArray.forEach((element) => console.log(element))
+}
+
+
+
 const backpackList = backpackObjectArray.map((backpack) => {
   let backpackArticle = document.createElement("article");
   backpackArticle.classList.add("backpack");
@@ -76,6 +84,8 @@ const backpackList = backpackObjectArray.map((backpack) => {
 
   let button = backpackArticle.querySelector(".lid-toggle");
   let newArg = "The argument I want to pass to the callback function!";
+  let strapLength = backpackArticle.querySelector(".backpack__strap")
+  newStrapLength(strapLength)
 
   // Add event listener
   button.addEventListener("click", (event) => {

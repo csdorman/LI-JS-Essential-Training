@@ -43,7 +43,23 @@ const lidToggle = function (event, button, newArg) {
 // Add strap length functionality
 const newStrapLength = (strapArray) => {
   console.log(strapArray)
-  strapArray.forEach((element) => console.log(element))
+  //Iterate through each strap side
+  strapArray.forEach((element) => {
+    console.log(element)
+    let side = element.getAttribute("data-side")
+
+    //Create form
+    let strapForm = document.createElement("form")
+    strapForm.classList.add(`${side}`)
+    strapForm.innerHTML = `
+    <input type="number" name="${side}Length" placeholder="New ${side} strap value"</input>
+    <button>Update strap length</button>
+    `
+    //Add strapForm to doc
+    element.append(strapForm)
+
+    // Event listener
+  })
 }
 
 
@@ -84,7 +100,7 @@ const backpackList = backpackObjectArray.map((backpack) => {
 
   let button = backpackArticle.querySelector(".lid-toggle");
   let newArg = "The argument I want to pass to the callback function!";
-  let strapLength = backpackArticle.querySelector(".backpack__strap")
+  let strapLength = backpackArticle.querySelectorAll(".backpack__strap")
   newStrapLength(strapLength)
 
   // Add event listener

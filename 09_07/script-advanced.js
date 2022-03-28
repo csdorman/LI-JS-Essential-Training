@@ -62,7 +62,8 @@ const newStrapLength = (strapArray) => {
     // Event listener
     strapForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      console.log(e);
+      let newLength = strapForm.querySelector("input").value;
+      // TODO Push this to the backpackArticle object
     });
   });
 };
